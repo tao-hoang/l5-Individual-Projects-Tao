@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Tao Hoang">
+  <title>Aim Train</title>
+  <link rel="login" href="aimtrainindex.html">
+  <link rel="stylesheet" href="loginstyle.css">
+</head>
+
+<body>
+  <header>
+    <h1 class="page-title">Aim Train</h1>
+  </header>
+  <main>
+    <section>
+      <form id="card-form">
+
+        <label for="label" class= "label">Name: </label>
+        <input type="text" id="name-input" class="input" name="Name" required/>
+
+        <label for="label" class= "label">Profile Picture: </label>
+        <input type="url" id="pic-input" class="input" name="Profile Picture" required/>
+
+        <input type="submit" class="button is-fullwidth">
+      </form>
+    </section>
+
+    <section>
+      <div class="card-display">
+        <h2 id="logo">Player</h2>
+        <img id="profile" src="user.png">
+        <h1 id="name">Username</h1>
+      </div>
+    </section>
+
+    <button id="myButton" class="float-left submit-button" >Home</button>
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "aimtrainindex.html";
+    };
+</script>
+
+
+  </main>
+
+
+
+  <script>
+    const swears = ['poopypants', 'bobblehead', 'termite licker', 'knickers', 'bloomers'];
+    const form = document.querySelector('form');
+
+    const nameInput = document.querySelector('#name-input');
+    const picInput = document.querySelector('#pic-input');
+    const warning = document.querySelector('#warning');
+    
+   let cardName = document.querySelector('#name');
+   let cardPic = document.querySelector('#profile')
+
+    function dirtyWords(words){
+      let badWords = swears.some((word) => words.includes(word));
+      if (badWords) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    form.addEventListener('submit', function (event){
+      event.preventDefault();
+      let name = nameInput.value;
+      let tagline = taglineInput.value;
+      let email = emailInput.value;
+      let pic = picInput.value;
+
+      let guestType;
+      guestInputs.forEach((btn) => {
+        if(btn.checked === true){
+          guestType = btn.value
+        }
+      });
+
+      if(dirtyWords(tagline)){
+        warning.innerHTML = "Clean up your language please";
+        warning.innerHTML.add('is-danger');
+        taglineInput.innerHTML.add('classList');
+        return false;
+      }else{
+        cardName.innerHTML = name;
+        cardTagline.innerHTML = tagline;
+        cardEmail.innerHTML = email;
+        cardPic.src = pic;
+        cardGuest.innerHTML = guestType;
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>

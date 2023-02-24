@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tao Hoang">
+    <title>Aim Training</title>
+    <link rel="login" href="loginindex.html">
+    <link rel="stylesheet" href="aimtrainstyle.css" />
+</head>
+
+<body>
+
+    <h1>Aim Training</h1>
+    <p id="score"> 0</p>
+    <img id="ball" src="ball.png" />
+
+    <div id="your-results">
+        <p>Your Results!</p>
+        <p>Refresh to play again</p>
+    </div>
+
+    <script>
+        let score = 0; 
+
+        let ball = document.querySelector ("#ball");
+
+        let scoreText = document.querySelector ("#score");
+
+        let gameOver = document.querySelector ("#your-results");
+
+        function points () {
+            score = score + 1;
+            scoreText.innerHTML = score;
+        }
+
+        ball.addEventListener('click', points);
+
+      function moveBall(){
+        let leftPos = 'left:' + Math.random() * 1200 + "px;";
+        let topPos = 'top:' + Math.random() * 600 + "px;";
+        ball.style.cssText = leftPos + topPos;
+      }
+
+      let interval = setInterval(moveBall, 1000);
+
+        function end (){
+            interval = clearInterval(interval);
+            gameOver.style.display = "block";
+        }
+        
+        setTimeout(end, 60000);
+
+
+    </script>
+</body>
+
+</html>
