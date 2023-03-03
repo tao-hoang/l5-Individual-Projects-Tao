@@ -9,7 +9,7 @@ body {
   overflow: auto;
   text-align: center;
   background-color: black;
-  background-image: url('gamescom.jpg');
+  background-image: url('crosshair.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Source Sans Pro', sans-serif;
@@ -61,7 +61,7 @@ form,
   text-align: center;
   padding: 40px;
   border-radius: 20px;
-  border: 3px solid #29acbb;
+  border: 3px solid #ff0000;
 }
 
 label {
@@ -82,16 +82,13 @@ legend {
 }
 
 input[type="submit"] {
-  background-color: #29acbb;
+  background-color: #ff0000;
   cursor: pointer;
   color: white !important;
   line-height: 1em;
   font-weight: bold;
 }
 
-/* Exercise 5
-Use the valid and invalid pseudo selectors to style the text and border-color 
-of the inputs, red for invalid, green for valid */
 input:valid, input:focus:valid {
   color: green;
   border-color: green;

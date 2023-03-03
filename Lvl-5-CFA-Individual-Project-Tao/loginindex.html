@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -7,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tao Hoang">
   <title>Aim Train</title>
-  <link rel="login" href="aimtrainindex.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="bulma.css">
   <link rel="stylesheet" href="loginstyle.css">
 </head>
 
@@ -19,7 +22,7 @@
     <section>
       <form id="card-form">
 
-        <label for="label" class= "label">Name: </label>
+        <label for="label" class= "label">Username: </label>
         <input type="text" id="name-input" class="input" name="Name" required/>
 
         <label for="label" class= "label">Profile Picture: </label>
@@ -29,15 +32,20 @@
       </form>
     </section>
 
-    <section>
-      <div class="card-display">
-        <h2 id="logo">Player</h2>
-        <img id="profile" src="user.png">
-        <h1 id="name">Username</h1>
-      </div>
-    </section>
+    <input type="submit" class="button is-fullwidth">
+  </form>
+</section>
 
-    <button id="myButton" class="float-left submit-button" >Home</button>
+<section>
+  <div class="card-display">
+    <h2 id="logo">Player</h2>
+    <img id="profile" src="placeholder-person.jpg">
+    <h1 id="name">Username</h1>
+    </div>
+  </div>
+</section>
+
+    <button id="myButton" class="float-left submit-button" >Start</button>
 
 <script type="text/javascript">
     document.getElementById("myButton").onclick = function () {
