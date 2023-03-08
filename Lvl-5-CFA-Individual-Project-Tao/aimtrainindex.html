@@ -52,11 +52,29 @@
         }
         
         setTimeout(end, 60000);
-        let x = document.getElementById("txt");
-        setTimeout(function(){ x.value = "2 seconds" }, 2000);
-        setTimeout(function(){ x.value = "4 seconds" }, 4000);
-        setTimeout(function(){ x.value = "6 seconds" }, 6000);  
 
+        var timeout = setTimeout(function() {}, 3600 * 1000);
+
+setInterval(function() {
+    console.log('Time left: '+getTimeLeft(timeout)+'s');
+}, 2000);
+
+function getTimeLeft(timeout) {
+    return Math.ceil((timeout._idleStart + timeout._idleTimeout - Date.now()) / 1000);
+}
+     
+
+        var divs = document.getElementsByTagName('card-display');
+
+    var toggle = function() {    
+    for (var i = 0, l = divs.length; i < l; i++) {
+        if (divs[i].getAttribute('class') == 'problem') 
+            if (divs[i].style.display == 'none') divs[i].style.display = '';
+            else divs[i].style.display = 'none';
+    }
+}
+
+document.getElementById('Toggle').onclick = toggle;
 
     </script>
 </body>

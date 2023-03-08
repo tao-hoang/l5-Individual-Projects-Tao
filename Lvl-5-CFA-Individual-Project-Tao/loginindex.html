@@ -44,7 +44,7 @@
         <h2 id="logo">Aim Train</h2>
         <img id="profile" src="placeholder-person.jpg">
         <h1 id="name">Name</h1>
-        <h3 id="tagline">Username</h3>
+        <h3 id="username">Username</h3>
         </div>
       </div>
     </section>
@@ -59,12 +59,12 @@
     const form = document.querySelector('form');
 
     const nameInput = document.querySelector('#name-input');
-    const taglineInput = document.querySelector('#username-input');
+    const usernameInput = document.querySelector('#username-input');
     const picInput = document.querySelector('#pic-input');
     const warning = document.querySelector('#warning');
  
    let cardName = document.querySelector('#name');
-   let cardTagline = document.querySelector('#username');
+   let cardUsername = document.querySelector('#username');
    let cardPic = document.querySelector('#profile')
 
     function dirtyWords(words){
@@ -79,28 +79,18 @@
     form.addEventListener('submit', function (event){
       event.preventDefault();
       let name = nameInput.value;
-      let tagline = taglineInput.value;
-      let email = emailInput.value;
+      let username = usernameInput.value;
       let pic = picInput.value;
 
-      let guestType;
-      guestInputs.forEach((btn) => {
-        if(btn.checked === true){
-          guestType = btn.value
-        }
-      });
-
-      if(dirtyWords(tagline)){
+      if(dirtyWords(username)){
         warning.innerHTML = "Clean up your language please";
         warning.innerHTML.add('is-danger');
-        taglineInput.innerHTML.add('classList');
+        usernameInput.innerHTML.add('classList');
         return false;
       }else{
         cardName.innerHTML = name;
-        cardTagline.innerHTML = tagline;
-        cardEmail.innerHTML = email;
+        cardUsername.innerHTML = username;
         cardPic.src = pic;
-        cardGuest.innerHTML = guestType;
       }
     });
 
