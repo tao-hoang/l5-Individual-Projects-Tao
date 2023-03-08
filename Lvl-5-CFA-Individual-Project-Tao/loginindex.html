@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Tao Hoang">
-  <title>Aim Train</title>
+  <meta name="author" content="Lynn Schirmer for CFA 2023">
+  <title>Form Validation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -12,6 +14,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="bulma.css">
   <link rel="stylesheet" href="loginstyle.css">
+  <a href="aimtrainindex.html" class = "startGame">Start Game</a>
 </head>
 
 <body>
@@ -22,8 +25,12 @@
     <section>
       <form id="card-form">
 
-        <label for="label" class= "label">Username: </label>
+        <label for="label" class= "label">Name: </label>
         <input type="text" id="name-input" class="input" name="Name" required/>
+
+        <label for="label" class= "label">Username: </label>
+        <input type="text" id="username-input" class="input" name="Username" minlength="10" maxlength="50" required/>
+        <p class= "help" id="warning"></p>
 
         <label for="label" class= "label">Profile Picture: </label>
         <input type="url" id="pic-input" class="input" name="Profile Picture" required/>
@@ -32,26 +39,15 @@
       </form>
     </section>
 
-    <input type="submit" class="button is-fullwidth">
-  </form>
-</section>
-
-<section>
-  <div class="card-display">
-    <h2 id="logo">Player</h2>
-    <img id="profile" src="placeholder-person.jpg">
-    <h1 id="name">Username</h1>
-    </div>
-  </div>
-</section>
-
-    <button id="myButton" class="float-left submit-button" >Start</button>
-
-<script type="text/javascript">
-    document.getElementById("myButton").onclick = function () {
-        location.href = "aimtrainindex.html";
-    };
-</script>
+    <section>
+      <div class="card-display">
+        <h2 id="logo">Aim Train</h2>
+        <img id="profile" src="placeholder-person.jpg">
+        <h1 id="name">Name</h1>
+        <h3 id="tagline">Username</h3>
+        </div>
+      </div>
+    </section>
 
 
   </main>
@@ -63,10 +59,12 @@
     const form = document.querySelector('form');
 
     const nameInput = document.querySelector('#name-input');
+    const taglineInput = document.querySelector('#username-input');
     const picInput = document.querySelector('#pic-input');
     const warning = document.querySelector('#warning');
-    
+ 
    let cardName = document.querySelector('#name');
+   let cardTagline = document.querySelector('#username');
    let cardPic = document.querySelector('#profile')
 
     function dirtyWords(words){
@@ -105,6 +103,15 @@
         cardGuest.innerHTML = guestType;
       }
     });
+
+    
+   
+
+
+
+
+
+
 
   </script>
 
